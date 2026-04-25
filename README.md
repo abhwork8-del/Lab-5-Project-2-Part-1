@@ -90,3 +90,107 @@ Receipts are easier to process compared to blur receipts images
 OCR systems can be significantly improved using preprocessing techniques.
 Combining multiple OCR engines provides more robust and accurate results across different types of images.
 
+
+## Lab 6: Advanced OCR Preprocessing & CNN Digit Recognition
+# Overview
+This lab focuses on applying advanced image preprocessing techniques to improve OCR (Optical Character Recognition) performance and implementing a Convolutional Neural Network (CNN) for handwritten digit recognition using the MNIST dataset.
+
+# Objectives
+Apply advanced preprocessing techniques on real-world images
+Improve text readability for OCR systems
+Understand and implement CNN architecture
+Achieve high accuracy (~98%) on MNIST dataset
+
+# Dataset (Custom Images)
+Five different types of images were used to simulate real-world OCR challenges:
+Blur.jpg 
+Handwritten.jpeg 
+Tilted Reciept.jpg 
+clear text.webp 
+rotated newspaper.webp 
+
+# Preprocessing Techniques Applied
+The following three techniques were applied to each image:
+# 1. Perspective Correction
+Used to fix distorted or angled images
+Manual corner selection applied for tilted receipt
+Default boundary points used for other images
+# 2. Deskewing
+Corrects rotation of text
+Automatically detects skew angle
+Applied using affine transformation
+# 3. Noise Removal
+Removes unwanted noise from images
+Techniques used:
+Thresholding
+Morphological operations
+
+# Processing Pipeline
+For each image:
+Load image
+Apply perspective correction
+Apply deskewing
+Apply noise removal
+Display results:
+Original Image
+Perspective Corrected
+Deskewed
+Denoised
+
+# CNN Model (MNIST Digit Recognition)
+Dataset
+MNIST handwritten digits (0–9)
+Model Architecture
+Conv2D (32 filters)
+MaxPooling
+Conv2D (64 filters)
+MaxPooling
+Flatten
+Dense (128 neurons)
+Output layer (10 classes)
+
+# Training Details
+Optimizer: Adam
+Loss Function: Sparse Categorical Crossentropy
+Epochs: 5
+
+# Result
+Achieved accuracy: ~98%
+
+# Tools & Libraries
+Python
+OpenCV
+NumPy
+Matplotlib
+TensorFlow / Keras
+Google Colab
+
+# Results
+Each image shows:
+Original vs Processed outputs
+Significant improvement in readability
+Effective handling of:
+Blur
+Skew
+Perspective distortion
+Noise
+
+# Key Learnings
+Image preprocessing is critical for OCR accuracy
+Different images require different preprocessing strategies
+CNNs are highly effective for image classification tasks
+Combining traditional CV + Deep Learning gives better results
+
+# Conclusion
+This lab demonstrates how advanced preprocessing techniques enhance OCR performance and how CNN models can achieve high accuracy in digit recognition tasks. The combination of both approaches is essential for building intelligent vision-based systems.
+
+# How to Run
+Open the notebook in Google Colab
+Upload the 5 images
+Run all cells step by step
+View results and accuracy
+
+# Author
+Aliha Batool
+BS Artificial Intelligence Lab 
+
