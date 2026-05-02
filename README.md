@@ -159,6 +159,66 @@ CNNs are highly effective for image classification tasks
 Combining traditional CV + Deep Learning gives better results
 # Conclusion
 This lab demonstrates how advanced preprocessing techniques enhance OCR performance and how CNN models can achieve high accuracy in digit recognition tasks. The combination of both approaches is essential for building intelligent vision-based systems.
+
+# Lab 7: Information Extraction & Named Entity Recognition
+# Objective
+The goal of this lab is to transform unstructured text (invoices/receipts) into structured data using:
+Regular Expressions (Regex)
+Named Entity Recognition (NER)
+Optical Character Recognition (OCR)
+# Concepts Covered
+Pattern matching using Regex
+Extracting dates, currency amounts, and invoice numbers
+Named Entity Recognition using spaCy
+OCR using Tesseract
+Building a complete data extraction pipeline
+Converting extracted data into JSON format
+# Technologies Used
+Python
+spaCy (NLP library)
+pytesseract (OCR)
+PIL (Image Processing)
+Regex (re module)
+JSON
+# Installation
+pip install spacy pytesseract pillow 
+python -m spacy download en_core_web_sm
+# Project Workflow
+# Step 1: OCR (Image → Text)
+Extract text from invoice images using Tesseract OCR.
+# Step 2: Regex Extraction
+Extract Dates
+Extract Currency Amounts
+Extract Invoice Numbers
+# Step 3: Named Entity Recognition (NER)
+Use spaCy to extract:
+Persons
+Organizations
+Locations
+Dates
+Money
+# Step 4: Data Structuring
+Combine extracted information into structured JSON format.
+# Complete Pipeline
+Image → OCR → Text → Regex + NER → Structured JSON
+# Sample Output
+{
+  "invoice_number": "INV-2024-001",
+  "dates": ["March 15, 2024"],
+  "amounts": [1250.50],
+  "persons": ["John Smith"],
+  "organizations": ["Acme Corporation"],
+  "locations": ["New York"],
+  "total_amount": 1250.50
+}
+# Testing
+The system was tested on multiple 3 invoice images to ensure robustness and accuracy.
+# Output
+The extracted data is saved in:
+extracted_data.json
+# Conclusion
+This lab demonstrates how AI and pattern matching techniques can be combined to build a document intelligence system that converts unstructured data into structured, usable information.
+
 # Author
 Aliha Batool
 BS Artificial Intelligence Lab 
