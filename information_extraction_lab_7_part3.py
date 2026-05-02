@@ -20,7 +20,7 @@ import json
 from PIL import Image
 import pytesseract
 nlp = spacy.load('en_core_web_sm')
-print("All libraries loaded ✅")
+print("All libraries loaded ")
 
 """REGEX FUNCTIONS
 **Extract Dates**
@@ -177,4 +177,4 @@ for img in images:
 
 with open('extracted_data.json', 'w') as f:
     json.dump(result, f, indent=2)
-print("Saved successfully ✅")
+print("Saved successfully ")
