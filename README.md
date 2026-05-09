@@ -219,7 +219,104 @@ extracted_data.json
 # Conclusion
 This lab demonstrates how AI and pattern matching techniques can be combined to build a document intelligence system that converts unstructured data into structured, usable information.
 
+##  Document Intelligence System (AI Lab 8)
+# Overview
+This project implements a Document Intelligence System that can:
+Perform OCR (Optical Character Recognition) on document images
+Classify documents into:
+1. Invoices
+2. Receipts
+3. Contracts
+Extract key information such as:
+1. Dates
+2. Amounts
+3. Entities
+Provide results through a FastAPI REST API
+# Objectives
+Convert images into text using OCR
+Apply TF-IDF for text vectorization
+Train a machine learning model for document classification
+Build API endpoints for real-world usage
+# Dataset Structure
+training_data: 
+1. invoices
+2. receipts
+3. contracts
+Each folder contains relevant document images.
+# Technologies Used
+Python
+pytesseract (OCR)
+scikit-learn
+FastAPI
+Uvicorn
+ngrok
+PIL (Python Imaging Library)
+# Workflow
+Image → OCR → Text → TF-IDF → Classifier → API Response
+# Machine Learning Model
+Vectorizer: TF-IDF
+Classifier: Logistic Regression
+Evaluation Metric: Accuracy
+# Results
+Achieved accuracy: 92% (varies with dataset size)
+Model performs well when:
+Images are clear
+Text is readable
+Classes are distinct
+# API Endpoints
+# classify
+Classifies the document type.
+# extract
+Extracts information from document.
+# process
+Performs full pipeline (classification + extraction).
+# How to Run
+# Step 1: Install Dependencies
+pip install fastapi uvicorn pytesseract scikit-learn joblib pyngrok
+# Step 2: Install Tesseract OCR
+apt-get install tesseract-ocr
+# Step 3: Upload Dataset
+Upload training_data.zip to Google Colab
+Extract it:
+!unzip training_data.zip -d /content/
+# Step 4: Train Model
+Run notebook cells to:
+Load dataset
+Extract OCR text
+Train model
+Evaluate accuracy
+# Step 5: Run API
+uvicorn api.main:app --host 0.0.0.0 --port 8000
+# Step 6: Expose with ngrok
+from pyngrok import ngrok
+ngrok.connect(8000)
+# Step 7: Open Swagger UI
+https://your-ngrok-link/docs
+Sample Outputs
+Classification results
+Extracted text fields
+Swagger UI interface
+# Limitations
+Accuracy depends on:
+Image quality
+OCR performance
+Dataset size
+Small datasets may lead to unstable results
+# Future Improvements
+Use deep learning models (CNN / BERT)
+Improve OCR preprocessing
+Increase dataset size
+Add more document categories
+# Conclusion
+This project demonstrates a complete AI-powered document processing pipeline combining:
+OCR
+Machine Learning
+API development
+It successfully classifies and extracts meaningful information from documents.
+
 # Author
-Aliha Batool
-BS Artificial Intelligence Lab 
+AI Lab 8 Submission (Project 2)
+Student Name: Aliha Batool
+Course: Artificial Intelligence
+
 
